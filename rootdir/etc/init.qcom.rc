@@ -116,11 +116,13 @@ on boot
 
     setprop wifi.interface wlan0
 
-    # UT ** ENABLE WIFI ** #
-    echo 1 > /dev/wcnss_wlan
-    echo sta > /sys/module/wlan/parameters/fwpath
-    # UT FINISH ** ENABLE WIFI ** #
+service initwlan /init-wlan.sh
+    class main
+    user system
+    group system
 
+    insmod wlan.ko
+    class_start initwlan
 
 #   Define TCP buffer sizes for various networks
 #   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,

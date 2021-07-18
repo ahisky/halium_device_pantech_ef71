@@ -165,7 +165,8 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc \
     init.qcom.class_core.sh \
     init.qcom.usb.sh \
-    loggy.sh
+    loggy.sh \
+    init-wifi.sh
 
 # Keylayout
 PRODUCT_COPY_FILES += \
